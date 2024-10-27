@@ -759,32 +759,30 @@ sub configs {
 
    # skip lines starting where first non-white character is
    # modify 'm' starts ^ and ends $ as pertaining to each line and not each file
-   #   print("2. readfiles,configs:chomped line $i is $line\n");
+#      print("2. readfiles,configs:chomped line num is $line\n");
 			next if $line =~ /^\s*#/m;
 
-#	print("3.0 readfiles,configs:these lines have no starting '#' $i is $line\n");
+#	print("3.0 readfiles,configs:these lines have no starting '#' is $line\n");
 
 			# trim white spaces from both ends
 			$line =~ s/^\s+|\s+$//g;
 
-#	print("3-1. readfiles,configs white spaces removed from ends,line $i is $line\n");
+#	print("3-1. readfiles,configs white spaces removed from ends,line is $line\n");
 
 			# split line using =
 			( $t_whole, $x ) = split( /\s+=\s*/, $line );
 			$t = $t_whole;    # redundant in long run unless the
 							  # following changes
 
-			# print("3-1a. readfiles,configs $t\t$x \n");
-
-			#			print("3-1b. readfiles,configs $t\t$x \n");
+#			print("3-1b. readfiles,configs $t\t$x \n");
 
 			$x = $control->get_no_quotes($x);
 
-			# print("3-1b. readfiles,configs $t\t$x \n");
+#			print("3-1b. readfiles,configs $t\t$x \n");
 
 			$x = $control->get_string_or_number($x);
 
-			# print("3-1c. readfiles,configs $t\t$x \n");
+#			print("3-1c. readfiles,configs $t\t$x \n");
 
 			# only print out lines that are not empty
 			if ($t) {
@@ -797,19 +795,19 @@ sub configs {
 				# test for "bad" x values
 				if ( not defined $x ) {
 
-					# print( "readfiles,configs, x is undefined\n");
+#					print( "readfiles,configs, x is undefined\n");
 					# print("                    replace x=$x  with ''\n");
 					$x = '';
 
 				}
 				elsif ( $x eq "''" ) {
 
-			  # print( "readfiles,configs, x is --$x--i.e., an empty string\n");
+#			  print( "readfiles,configs, x is --$x--i.e., an empty string\n");
 			  # print("                    replace x=$x  with ''\n");
 				}
 				elsif ( $x =~ /^ *$/ ) {
 
-				   # print( "readfiles,configs, x contains 0 or more spaces\n");
+#				   print( "readfiles,configs, x contains 0 or more spaces\n");
 				   # print("                    replace x=$x  with ''\n");
 					$x = '';
 				}
@@ -819,7 +817,7 @@ sub configs {
 					# print("                    replace x=$x  with ''\n");
 				}
 
-				# assume ALL bad x value shave been caught , including x=0
+				# assume ALL bad x values have been caught , including x=0
 
 #		        print("5-1. readfiles,configs:parameter name, value : $t,$x\n");
 				$parameter[$index] = $t;

@@ -29,6 +29,6 @@ use aliased 'App::SeismicUnixGui::configs::big_streams::Project_config';
 my $Project = Project_config->new();
 
 $Project->basic_dirs();
-#$Project->system_dirs();
-#$Project->make_local_dirs();
-#$Project->update_configuration_files();
+$Project->system_dirs();
+$Project->make_local_dirs();
+$Project->update_configuration_files();

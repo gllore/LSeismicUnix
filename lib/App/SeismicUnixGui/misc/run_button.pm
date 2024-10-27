@@ -189,7 +189,7 @@ sub _Run_pre_built_superflow {
 	# must have saved files already
 	if ($pre_req_ok) {
 
-		print("2. run_button,_Run_pre_built_superflow, passed pre_ok check\n");
+#		print("2. run_button,_Run_pre_built_superflow, passed pre_ok check\n");
 #		if ( $run_button->{_is_superflow_select_button} ) {
 #			print("3. run_button,program name is ${$run_button->{_prog_name_sref}}\n");
 #		}
@@ -205,7 +205,7 @@ sub _Run_pre_built_superflow {
 		# print("4. run_button,program RUN name is $run_name \n");
 
 		# Instruction runs in system
-		print("4. run_button,running as sh $global_libs->{_script}$run_name \n");
+#		print("4. run_button,running as sh $global_libs->{_script}$run_name \n");
 		system("sh $global_libs->{_script}$run_name");
 
 	} else {

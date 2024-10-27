@@ -155,7 +155,7 @@ if ( not $PROJECT_exists
 
 	my $tar_input = $HOME . '/' . $tutorial_name;
 #	print("Confirmation: PROJECT does not exist\n");
-	#
+	
 	my $old_Project_config_file = $tar_input . '/Project.config';
 	my $new_Project_config_file =
 	  $CONFIGURATION . '/' . $tutorial_name . '/Project.config';
@@ -227,7 +227,8 @@ if ( not $PROJECT_exists
 =head2
 
 	Updates new Project_config file
-	in ACTIVE_PROJECT (no ticks)and in the Servilleta
+	in ACTIVE_PROJECT (no ticks)
+	AND in the Servilleta
 	subdirectory (with ticks)
 	
 =cut
@@ -247,12 +248,12 @@ to .LSU/configuration/active/Project.config
 
 =cut
 
-	my $from1 = $new_Project_config_file;    # has the current user name
-	my $to1   = $ACTIVE_PROJECT;
-
-#	print("Copying $from1 to $to1\n");
-
-	copy( $from1, $to1 );
+#	my $from1 = $new_Project_config_file;    # has the current user name
+#	my $to1   = $ACTIVE_PROJECT;
+#
+##	print("Copying $from1 to $to1\n");
+#
+#	copy( $from1, $to1 );
 
 	if ( $old_username_from_backup ne $current_username ) {
 
@@ -528,12 +529,12 @@ to .LSU/configuration/active/Project.config
 =cut
 
 
-	my $from1 = $new_Project_config_file;    # has the current user name
-	my $to1   = $ACTIVE_PROJECT;
-
-#	print("Copying $from1 to $to1\n");
-
-	copy( $from1, $to1 );
+#	my $from1 = $new_Project_config_file;    # has the current user name
+#	my $to1   = $ACTIVE_PROJECT;
+#
+##	print("Copying $from1 to $to1\n");
+#
+#	copy( $from1, $to1 );
 
 		# avoid extra work
 		if ( $old_username_from_backup ne $current_username ) {
