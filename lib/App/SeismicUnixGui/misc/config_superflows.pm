@@ -370,7 +370,6 @@ sub save {
 			# to /home/gom/.L_SU/configuration/active/Project.config	  
 			$files_LSU->write(); 
 			
-			
 			# also create additional directory and file in the configuration area
 			# of the project. 
 			# to /home/gom/.L_SU/configuration/ProjectName/Project.config

@@ -686,9 +686,7 @@ sub makconfig {
 	  my ($self) = @_;
 	  use File::Copy;
 
-	  my $ACTIVE_PROJECT;
-
-	  $ACTIVE_PROJECT = _get_ACTIVE_PROJECT();
+	  my $ACTIVE_PROJECT = _get_ACTIVE_PROJECT();
 	  my $PATH_N_file = $ACTIVE_PROJECT . '/Project.config';
 
 #    print("L_SU_local_user_constants,makconfig,PATH_N_file 	: $PATH_N_file\n");
@@ -698,7 +696,7 @@ sub makconfig {
 #    print(
 #"L_SU_local_user_constants,makconfig, default_Project_config: $default_Project_config\n"
 #    );
-#	  manage_dirs_by->make_dir($ACTIVE_PROJECT);
+	  manage_dirs_by->make_dir($ACTIVE_PROJECT);
 	  copy( $default_Project_config, $PATH_N_file );
 
 #	  print("L_SU_local_user_constants,makconfig, created $PATH_N_file\n");
@@ -720,7 +718,7 @@ sub makconfig {
 	                         . '.config';  
 	  # e.g., /home/username/.L_SU/configuration/Servilleta/Project.config
 
-#	  print("L_SU_local_user_constants, created $new_PATH_N_file\n");
+#	  print("L_SU_local_user_constants, created ci=onfiguration $new_PATH_N_file\n");
 	  manage_dirs_by->make_dir($new_PATH);
 	  copy( $default_Project_config, $new_PATH_N_file );
 #	  print("L_SU_local_user_constants, copied default Project.config to $new_PATH_N_file\n");

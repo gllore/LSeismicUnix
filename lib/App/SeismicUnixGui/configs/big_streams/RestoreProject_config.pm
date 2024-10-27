@@ -59,14 +59,14 @@ sub get_values {
     # Warning: set using a scalar reference
     $RestoreProject_config->{_prog_name} = \@{$superflow_config_names}[14];
 
-    print("RestoreProject_config, prog_name : @{$superflow_config_names}[14]\n");
+#    print("RestoreProject_config, prog_name : @{$superflow_config_names}[14]\n");
 
     $config_superflows->set_program_name( $RestoreProject_config->{_prog_name} );
 
     # parameter values from superflow configuration file
     $RestoreProject_config->{_values_aref} = $config_superflows->get_values();
 
-    print("RestoreProject_config,values=@{$RestoreProject_config->{_values_aref}}\n");
+#    print("RestoreProject_config,values=@{$RestoreProject_config->{_values_aref}}\n");
 
     my $directory_name = @{ $RestoreProject_config->{_values_aref} }[0];
     

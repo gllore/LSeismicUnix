@@ -101,7 +101,8 @@ my $prog_name        = 'Project';
 my $home_directory;
 my $untar_options         = '-xzvf';
 my $default_tutorial_name = 'Servilleta';
-my $tutorial_name         = '';
+
+my $tutorial_name = '';
 
 my $false          = 0;
 my $true           = 1;
@@ -125,8 +126,8 @@ if ( length( $ARGV[0] )
 
 }
 else {
-	# NADA User has created a RestoreProject.config
-	# file in their existing Project
+	# NADA
+#	print("NADA RestoreProject.pl\n");
 }
 
 =head2 STEP 1.
@@ -153,9 +154,8 @@ if ( not $PROJECT_exists
 	$L_SU_local_user_constants->makconfig();
 
 	my $tar_input = $HOME . '/' . $tutorial_name;
-
-	#	print("Confirmation: PROJECT does not exist\n");
-	#	print("tutorial_name=$tutorial_name\n");
+#	print("Confirmation: PROJECT does not exist\n");
+	#
 	my $old_Project_config_file = $tar_input . '/Project.config';
 	my $new_Project_config_file =
 	  $CONFIGURATION . '/' . $tutorial_name . '/Project.config';
@@ -170,17 +170,6 @@ if ( not $PROJECT_exists
 	system($perl_instruction);
 
 =head2
-
-    Copy over raw, backed up version
-    of Project_config file
-   
-=cut
-
-	my $from = $old_Project_config_file;
-	my $to   = $new_Project_config_file;
-	copy( $from, $to );
-
-=head2
   
   Replace old username from backed-up Project.config file,
   (new_project_config_file)
@@ -193,14 +182,13 @@ if ( not $PROJECT_exists
 
 	my ( $ref_parameter, $ref_value ) =
 	  $readfiles->configs($old_Project_config_file);
+
 	my @value                    = @$ref_value;
 	my $old_username_from_backup = $value[7];
 
-#	print(" RestoreProject.pl,old username=$value[7]\n");
-#	print(" RestoreProject.pl,old old_username_from_backup=$old_username_from_backup\n");
-
 	$config_superflows->set_program_name( \$prog_name );    # needed
 
+	# remove ticks around critical values
 	$control->set_infection( $value[0] );
 	my $home_value = $control->get_ticksBgone();
 
@@ -215,39 +203,36 @@ if ( not $PROJECT_exists
 
 	my $dir2find = $old_username_from_backup;
 
-	# make sure that you are not doing something unnecessary
-	if ( $old_username_from_backup ne $current_username ) {
+	my $instruction3;
 
-		my $instruction3;
+	# for updating new_Project_config file
+	$home_value    =~ s/$old_username_from_backup/$current_username/;
+	$project_value =~ s/$old_username_from_backup/$current_username/;
+	$subuser_value =~ s/$old_username_from_backup/$current_username/;
 
-		# for updating new_Project_config file
-		$home_value    =~ s/$old_username_from_backup/$current_username/;
-		$project_value =~ s/$old_username_from_backup/$current_username/;
-		$subuser_value =~ s/$old_username_from_backup/$current_username/;
+#	print(" home_value    = $home_value\n");
+#	print(" project_value = $project_value\n");
+#	print(" subuser_value = $subuser_value\n");
 
-		#	print(" home_value    = $home_value\n");
-		#	print(" project_value = $project_value\n");
-		#	print(" subuser_value = $subuser_value\n");
+	$value[0] = $home_value;
+	$value[1] = $project_value;
+	$value[7] = $subuser_value;
 
-		$value[0] = $home_value;
-		$value[1] = $project_value;
-		$value[7] = $subuser_value;
-
-		my $hash_ref = {
-			_names_aref     => $ref_parameter,
-			_values_aref    => \@value,
-			_prog_name_sref => \$prog_name,
-		};
+	my $hash_ref = {
+		_names_aref     => $ref_parameter,
+		_values_aref    => \@value,
+		_prog_name_sref => \$prog_name,
+	};
 
 =head2
 
 	Updates new Project_config file
-	in ACTIVE_PROJECT  (no ticks)and in the Servilleta
+	in ACTIVE_PROJECT (no ticks)and in the Servilleta
 	subdirectory (with ticks)
 	
 =cut
 
-		$config_superflows->save($hash_ref);
+	$config_superflows->save($hash_ref);
 
 =pod	
 
@@ -255,20 +240,21 @@ Replace the Project_config file
 within the ACTIVE_PROJECT,
 because all its parameters have ticks
 		
-Copy newly created Project.config, created above
+To do this, copy newly created Project.config, 
+created above
 by config_superflows_>save, in Servilleta subdirectory
 to .LSU/configuration/active/Project.config
 
 =cut
 
-		my $new_Project_config_file =
-		  $CONFIGURATION . '/' . $tutorial_name . '/Project.config';
+	my $from1 = $new_Project_config_file;    # has the current user name
+	my $to1   = $ACTIVE_PROJECT;
 
-		my $from2 = $new_Project_config_file;    # has the current user name
-		my $to2   = $ACTIVE_PROJECT;
+#	print("Copying $from1 to $to1\n");
 
-		#		print("Copying $from2 to $to2\n");
-		copy( $from2, $to2 );
+	copy( $from1, $to1 );
+
+	if ( $old_username_from_backup ne $current_username ) {
 
 		# Replace old folder names with current username
 		my $starting_point = $HOME . '/' . $tutorial_name;
@@ -276,15 +262,15 @@ to .LSU/configuration/active/Project.config
 		# print(" RestoreProject.pl,project_directory=$tutorial_name\n");
 
 	 # print(" Looking for directories within the project to be restored...\n");
-	 #	print("old_username_from_backup=$old_username_from_backup\n");
+	 # print("old_username_from_backup=$old_username_from_backup\n");
 
 		my @original_list =
 		  `(find $starting_point -name $dir2find -type d -print 2>/dev/null)`;
 		my $original_list_length = scalar @original_list;
 		my @new_list             = @original_list;
 
-		#        print("list is $original_list_length\n");
-		#        print("@new_list\n");
+		#	print("list is $original_list_length\n");
+		print("@new_list\n");
 
 =pod
 
@@ -306,18 +292,13 @@ Change folder names to the new user's
 			$new_directory =~
 			  s/(?<=\b)(?=$dir2find\b)$dir2find/$current_username/g;
 			chomp $old_directory;
-			$instruction3 = ("mv $old_directory $new_directory\n");
-
+			$instruction3 = `(mv $old_directory $new_directory 2>/dev/null)`;
 			system($instruction3);
 
-			#			print(" new_directory=$new_directory\n");
-			#			print("$instruction3\n ");
+			# print(" new_directory=$new_directory\n");
+			#		print("$instruction3\n ");
 
 		}
-	}
-	else {
-		#		print("RestoreProject.pl, new and old user names are the same\n")
-		#		  ;
 	}
 
 }
@@ -466,7 +447,7 @@ subfolder
 		my $to   = $new_Project_config_file;
 		copy( $from, $to );
 
-		# print("RestoreProject.pl, Copying from $from to $to\n");
+		print("RestoreProject.pl, Copying from $from to $to\n");
 
 		my ( $ref_parameter, $ref_value ) =
 		  $readfiles->configs($old_Project_config_file);
@@ -532,50 +513,76 @@ subfolder
 
 		$config_superflows->save($hash_ref);
 
-		# Replace old folder names with current username
-		my $starting_point = $HOME . '/' . $new_project_dir_name;
+
+=pod	
+
+Replace the Project_config file
+within the ACTIVE_PROJECT,
+because all its parameters have ticks
+		
+To do this, copy newly created Project.config, 
+created above
+by config_superflows_>save, in Servilleta subdirectory
+to .LSU/configuration/active/Project.config
+
+=cut
+
+
+	my $from1 = $new_Project_config_file;    # has the current user name
+	my $to1   = $ACTIVE_PROJECT;
+
+#	print("Copying $from1 to $to1\n");
+
+	copy( $from1, $to1 );
+
+		# avoid extra work
+		if ( $old_username_from_backup ne $current_username ) {
+
+			# Replace old folder names with current username
+			my $starting_point = $HOME . '/' . $new_project_dir_name;
 
 	   #		print(" RestoreProject.pl,project_directory=$new_project_dir_name\n");
 
 	 #	print(" Looking for directories within the project to be restored...\n");
 	 #		print("old_username_from_backup=$old_username_from_backup\n");
 
-		my @original_list =
-		  `(find $starting_point -name $dir2find -type d -print 2>/dev/null)`;
-		my $original_list_length = scalar @original_list;
-		my @new_list             = @original_list;
+			my @original_list =
+`(find $starting_point -name $dir2find -type d -print 2>/dev/null)`;
+			my $original_list_length = scalar @original_list;
+			my @new_list             = @original_list;
 
-		#		print("list is $original_list_length\n");
-		my $instruction3;
+			#		print("list is $original_list_length\n");
+			my $instruction3;
 
-		# perform replacement here
+			# perform replacement here
 
-		#	print("current_username = $current_username\n");
-		#	print("dir2find= $dir2find\n");
+			#	print("current_username = $current_username\n");
+			#	print("dir2find= $dir2find\n");
 
-		for ( my $i = 0 ; $i < $original_list_length ; $i++ ) {
+			for ( my $i = 0 ; $i < $original_list_length ; $i++ ) {
 
-			my $old_directory = $original_list[$i];
-			my $new_directory = $original_list[$i];
+				my $old_directory = $original_list[$i];
+				my $new_directory = $original_list[$i];
 
-			#			print("old_directory= $old_directory\n");
+				#			print("old_directory= $old_directory\n");
 
-			# remove ambiguous substitutions by makign sure
-			# the directory name found has no extra letters
-			# at the start or the end
-			$new_directory =~
-			  s/(?<=\b)(?=$dir2find\b)$dir2find/$current_username/g;
-			chomp $old_directory;
-			$instruction3 = ("mv $old_directory $new_directory ");
-			system($instruction3);
+				# remove ambiguous substitutions by makign sure
+				# the directory name found has no extra letters
+				# at the start or the end
+				$new_directory =~
+				  s/(?<=\b)(?=$dir2find\b)$dir2find/$current_username/g;
+				chomp $old_directory;
+				$instruction3 = ("mv $old_directory $new_directory ");
+				system($instruction3);
 
-			#			print(" new_directory=$new_directory\n");
-			#			print("$instruction3\n");
+				#			print(" new_directory=$new_directory\n");
+				#			print("$instruction3\n");
 
-		}
+			}
 
-		#	print("replaced list is @new_list\n");
-
+			#	print("replaced list is @new_list\n");
+			
+		} # if current suername ne old_username
 	}
 	else {
 		print("RestoreProject.pl,unsuccessful\n");
@@ -589,4 +596,3 @@ else {
 	print("RestoreProject.pl, possible missing project name to restore\n");
 
 }
-

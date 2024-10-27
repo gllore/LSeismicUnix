@@ -73,7 +73,6 @@ my $Project = {
 	_component           => '',
 	_stage               => '',
 	_process             => '',
-	_PROJECT_HOME        => '',
 	_subUser             => '',
 	_DATA_GEOMAPS                 => '',
 	_DATA_GEOMAPS_BIN             => '',
@@ -230,7 +229,7 @@ sub _basic_dirs {
 
 		$prog_name = $prog_name_old;
 
-#		print("1a. Project_config,_basic_dirs,using local $prog_name_old.config \n");
+#		print("L 233 Project_config,_basic_dirs,using local $prog_name_old.config \n");
 		$prog_name_config = $prog_name_old . '.config';
 		my ( $ref_DIR_FUNCTION, $ref_DIR ) =
 		  $readfiles->configs( ( $prog_name . '.config' ) );
@@ -262,7 +261,9 @@ sub _basic_dirs {
 			$ACTIVE_PROJECT . '/'
 		  . $prog_name_new
 		  . '.config'
-		  ;    # i.e. /home/gom/.L_SU/configuration/active/Project.config
+		  ;    
+		  
+#		print("L 267 Project_config,_basic_dirs, /home/gom/.L_SU/configuration/active/Project.config\n");
 		my ( $ref_DIR_FUNCTION, $ref_DIR ) = $readfiles->configs(
 			( $ACTIVE_PROJECT . '/' . $prog_name_new . '.config' ) );
 
@@ -311,7 +312,7 @@ sub _basic_dirs {
 # print("1. Project_config,_basic_dirs, prog_name_config: $prog_name_config \n");
 
 	if ( $prog_name ne '' ) {    # safe condition
-			# print("Project_config,_basic_dirs,reading $prog_name_config\n");
+#	    print("L 316 Project_config,_basic_dirs,reading $prog_name_config\n");
 		my ( $ref_DIR_FUNCTION, $ref_DIR ) =
 		  $readfiles->configs( ($prog_name_config) );
 		$Project->{_ref_DIR} = $ref_DIR;
@@ -385,14 +386,14 @@ sub basic_dirs {
 
 		$prog_name = $prog_name_old;
 
-#		print("L388 Project_config,basic_dirs,using local $prog_name.config\n");
+#		print("L390 Project_config,basic_dirs,using local $prog_name.config\n");
 		$prog_name_config = $prog_name_old . '.config';
 
 		my ( $ref_DIR_FUNCTION, $ref_DIR ) =
 		  $readfiles->configs( ( $prog_name . '.config' ) );
 		$Project->{_ref_DIR} = $ref_DIR;
 
-#	print(" 1. L 395 Project_config,basic_dirs,ref_DIR:@{$Project->{_ref_DIR}}\n");
+#	print(" 1. L 397 Project_config,basic_dirs,ref_DIR:@{$Project->{_ref_DIR}}\n");
 		$Project->{_ref_DIR_FUNCTION} = $ref_DIR_FUNCTION;
 		_change_basic_dirs();
 
@@ -402,10 +403,11 @@ sub basic_dirs {
 
 		$prog_name = $prog_name_new;
 		my ( $ref_DIR_FUNCTION, $ref_DIR ) =
+#				print(
+#		" L 408 Project_config,basic_dirs,ref_DIR:@{$Project->{_ref_DIR}}\n");
 		  $readfiles->configs( ( $prog_name . '.config' ) );
 		$Project->{_ref_DIR} = $ref_DIR;
-#		print(
-#			" 3. L 408 Project_config,basic_dirs,ref_DIR:@{$Project->{_ref_DIR}}\n");
+
 		$Project->{_ref_DIR_FUNCTION} = $ref_DIR_FUNCTION;
 		_change_basic_dirs();
 
@@ -415,7 +417,7 @@ sub basic_dirs {
 
 		$prog_name = $prog_name_new;
 
-#        print("L 418 Project_config,basic_dirs,using $ACTIVE_PROJECT/$prog_name.config\n");
+#        print("L 420 Project_config,basic_dirs,using $ACTIVE_PROJECT/$prog_name.config\n");
 		my ( $ref_DIR_FUNCTION, $ref_DIR ) = $readfiles->configs(
 			( $ACTIVE_PROJECT . '/' . $prog_name_new . '.config' ) );
 		$Project->{_ref_DIR} = $ref_DIR;
@@ -453,7 +455,7 @@ sub _change_basic_dirs {
 
 	my $length = scalar @{ $Project->{_ref_DIR} };
 
-#print(" 5. Project_config,_change_basic_dirs,ref_DIR:@{$Project->{_ref_DIR}}\n");
+#print(" L 458. Project_config,_change_basic_dirs,ref_DIR:@{$Project->{_ref_DIR}}\n");
 
 	for ( my $i = 0, my $j = 0 ; $i < $length ; $i++, $j = $j + 2 ) {
 
@@ -467,6 +469,7 @@ sub _change_basic_dirs {
 	$HOME         = $CFG[1];
 	$PROJECT_HOME = $CFG[3];
 	$site         = $CFG[5];
+#	print("L 472 Project_config,make_local_dirs,PROJECT_HOME=$PROJECT_HOME\n");
 
 	# use scalar ref
 	$spare_dir = $control->empty_directory( \$CFG[7] );
@@ -489,7 +492,7 @@ sub _change_basic_dirs {
 	$r_logic       = $control->set_str2logic( $CFG[29] );
 	$sqlite_logic  = $control->set_str2logic( $CFG[31] );
 
-# print("1. Project_config,_change_basic_dirs PROJECT_HOME=$Project->{_PROJECT_HOME}\n");
+#print("L495 Project_config,_change_basic_dirs PROJECT_HOME=$Project->{_PROJECT_HOME}\n");
 # print("1. Project_config,_change_basic_dirs spare_dir=----$spare_dir----\n");
 
 =head2
@@ -581,7 +584,7 @@ sub _system_dirs {
   # print(" Project_config, _system_dirs, Before PROJECT_HOME $PROJECT_HOME\n");
 	$PROJECT_HOME =~ s/\'//g;
 
-  #  print(" Project_config, _system_dirs, After PROJECT_HOME $PROJECT_HOME\n");
+#  print(" L 587 Project_config, _system_dirs, After PROJECT_HOME $PROJECT_HOME\n");
   # print(" Project_config, _system_dirs, Before subUser: $subUser \n");
 
 	if ( length $subUser ) {
@@ -2627,6 +2630,7 @@ sub make_local_dirs {
 	# Always create basic types
 	my $PROJECT_HOME = $Project->{_PROJECT_HOME};
 	
+#	print("Project_config,L2633,$PROJECT_HOME\n");
 	$manage_dirs_by->make_dir($PROJECT_HOME);
 
 	# BY data type
@@ -2960,7 +2964,7 @@ sub update_configuration_files {
 		_values_aref        => '',
 		_check_buttons_aref => '',
 	};
-
+#	print("L 2965 Project_config, $inbound\n");
 	my ( $names_aref, $values_aref ) = $readfiles->configs($inbound);
 
 	$project->{_names_aref}  = $names_aref;

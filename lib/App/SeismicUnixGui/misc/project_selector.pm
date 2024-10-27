@@ -496,7 +496,7 @@ sub _ok {
 			copy( $from, $to );
 
 	  # Instruction to create the new directories runs in system
-	  # print("project_selector,_ok,create new Project and its directories \n");
+#	  print("project_selector,_ok,create new Project and its directories \n");
 	  #	  print("project_selector,_ok,copy FROM:$from TO:$to \n");
 
    #		    print("project_selector,_ok, sh $global_libs->{_script}$run_name \n");
