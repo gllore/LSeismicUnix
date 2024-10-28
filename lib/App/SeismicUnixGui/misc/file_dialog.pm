@@ -154,7 +154,7 @@ sub _FileDialog {
     
 	# Can be for a data or pl directory or for only a directory
 	# print("file_dialog,_FileDialog, path: $file_dialog->{_path}\n");
-	print("file_dialog,_FileDialog, path: $FileDialog_path\n");
+#	print("file_dialog,_FileDialog, path: $FileDialog_path\n");
 	# print("file_dialog,_FileDialog, mytitle: $my_title\n");
 
 	my $fileDialog_w = $file_dialog->{_mw}->JFileDialog(
