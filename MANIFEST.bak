@@ -4005,7 +4005,11 @@ dist/my_uninstall.sh
 dist/uninstall_module.pl
 lib/App/.SeismicUnixGui.pm.swp
 lib/App/SeismicUnixGui.pm
+lib/App/SeismicUnixGui/big_streams/BackupProject.pl
 lib/App/SeismicUnixGui/big_streams/check.pm
+lib/App/SeismicUnixGui/big_streams/home/gllore/LiClipse/Project.config
+lib/App/SeismicUnixGui/big_streams/home/gllore/LiClipse/seismics/pl/VetSchool/E/100619/H/1/gllore/a
+lib/App/SeismicUnixGui/big_streams/home/gllore/LiClipse/seismics/pl/VetSchool/E/100619/H/1/gllore/BackupProject.config
 lib/App/SeismicUnixGui/big_streams/iApply_bottom_mute.pm
 lib/App/SeismicUnixGui/big_streams/iApply_mute.pm
 lib/App/SeismicUnixGui/big_streams/iApply_top_mute.pm
@@ -4038,13 +4042,19 @@ lib/App/SeismicUnixGui/big_streams/iSuvelan.pm
 lib/App/SeismicUnixGui/big_streams/iTopMute.pl
 lib/App/SeismicUnixGui/big_streams/iTopMute.pm
 lib/App/SeismicUnixGui/big_streams/iTopMutePicks2par.pm
+lib/App/SeismicUnixGui/big_streams/iVA.pl
 lib/App/SeismicUnixGui/big_streams/iVA.pm
 lib/App/SeismicUnixGui/big_streams/iVelocityAnalysis.pl
 lib/App/SeismicUnixGui/big_streams/iVpicks2par.pm
 lib/App/SeismicUnixGui/big_streams/iVrms2Vint.pm
 lib/App/SeismicUnixGui/big_streams/iWrite_All_iva_out.pm
+lib/App/SeismicUnixGui/big_streams/LiClipse.tz
+lib/App/SeismicUnixGui/big_streams/LiClipse/Project.config
+lib/App/SeismicUnixGui/big_streams/LiClipse/seismics/pl/VetSchool/E/100619/H/1/gllore/a
+lib/App/SeismicUnixGui/big_streams/LiClipse/seismics/pl/VetSchool/E/100619/H/1/gllore/BackupProject.config
 lib/App/SeismicUnixGui/big_streams/pre_built_big_stream.pm
 lib/App/SeismicUnixGui/big_streams/Project.pl
+lib/App/SeismicUnixGui/big_streams/RestoreProject.pl
 lib/App/SeismicUnixGui/big_streams/SetProject.pl
 lib/App/SeismicUnixGui/big_streams/Sseg2su.pl
 lib/App/SeismicUnixGui/big_streams/Su2segy.pl
@@ -4052,6 +4062,7 @@ lib/App/SeismicUnixGui/big_streams/Sucat.pl
 lib/App/SeismicUnixGui/big_streams/Sudipfilt.pl
 lib/App/SeismicUnixGui/big_streams/Synseis.pl
 lib/App/SeismicUnixGui/big_streams/Synseis.pm
+lib/App/SeismicUnixGui/big_streams/test.pl
 lib/App/SeismicUnixGui/c/bin/synseis
 lib/App/SeismicUnixGui/c/bin/synseis_old
 lib/App/SeismicUnixGui/c/bin/test
@@ -4062,6 +4073,8 @@ lib/App/SeismicUnixGui/c/synseis/run_me_only.sh
 lib/App/SeismicUnixGui/c/synseis/set_env_variables.sh
 lib/App/SeismicUnixGui/c/synseis/src/synseis.c
 lib/App/SeismicUnixGui/c/synseis/src/synseis_bck.c
+lib/App/SeismicUnixGui/configs/big_streams/BackupProject.config
+lib/App/SeismicUnixGui/configs/big_streams/BackupProject_config.pm
 lib/App/SeismicUnixGui/configs/big_streams/iBottom_Mute3.config
 lib/App/SeismicUnixGui/configs/big_streams/iBottomMute.config
 lib/App/SeismicUnixGui/configs/big_streams/iBottomMute_config.pm
@@ -4085,6 +4098,8 @@ lib/App/SeismicUnixGui/configs/big_streams/iVA_config.pm
 lib/App/SeismicUnixGui/configs/big_streams/model.txt
 lib/App/SeismicUnixGui/configs/big_streams/Project.config
 lib/App/SeismicUnixGui/configs/big_streams/Project_config.pm
+lib/App/SeismicUnixGui/configs/big_streams/RestoreProject.config
+lib/App/SeismicUnixGui/configs/big_streams/RestoreProject_config.pm
 lib/App/SeismicUnixGui/configs/big_streams/Sseg2su.config
 lib/App/SeismicUnixGui/configs/big_streams/Sseg2su_config.pm
 lib/App/SeismicUnixGui/configs/big_streams/Sucat.config
@@ -4342,6 +4357,7 @@ lib/App/SeismicUnixGui/configs/shapeNcut/susort.config
 lib/App/SeismicUnixGui/configs/shapeNcut/susplit.config
 lib/App/SeismicUnixGui/configs/shapeNcut/suvcat.config
 lib/App/SeismicUnixGui/configs/shapeNcut/suwind.config
+lib/App/SeismicUnixGui/configs/shell/cat_su.config
 lib/App/SeismicUnixGui/configs/shell/catsu.config
 lib/App/SeismicUnixGui/configs/shell/evince.config
 lib/App/SeismicUnixGui/configs/shell/par/a2b.config
@@ -4857,13 +4873,6 @@ lib/App/SeismicUnixGui/developer/Stripped/well/subackush.su.main.well_logs
 lib/App/SeismicUnixGui/developer/Stripped/well/sugassman.main.well_logs
 lib/App/SeismicUnixGui/developer/Stripped/well/sulprime.su.main.well_logs
 lib/App/SeismicUnixGui/developer/Stripped/well/suwellrf.su.main.well_logs
-lib/App/SeismicUnixGui/doc/documentation_conversion/pod2htmd.tmp
-lib/App/SeismicUnixGui/doc/documentation_conversion/pod2rst.sh
-lib/App/SeismicUnixGui/doc/documentation_conversion/suop.html
-lib/App/SeismicUnixGui/doc/documentation_conversion/suop.markdown
-lib/App/SeismicUnixGui/doc/documentation_conversion/suop.pm
-lib/App/SeismicUnixGui/doc/documentation_conversion/suop.rst
-lib/App/SeismicUnixGui/doc/documentation_conversion/suop_2.rst
 lib/App/SeismicUnixGui/doc/FAQ_immodpg
 lib/App/SeismicUnixGui/doc/FAQ_L_SU
 lib/App/SeismicUnixGui/doc/FAQ_SeismicUnixGui
@@ -4872,6 +4881,9 @@ lib/App/SeismicUnixGui/doc/SeismicUnixGui_Installation_Guide_0.82.9.pdf
 lib/App/SeismicUnixGui/doc/SeismicUnixGuiInstallationGuide0.82.5.pdf
 lib/App/SeismicUnixGui/doc/SeismicUnixGuiInstallationGuide0.84.0.pdf
 lib/App/SeismicUnixGui/doc/SeismicUnixGuiInstallationGuide0.87.1.pdf
+lib/App/SeismicUnixGui/doc/SeismicUnixGuiInstallationGuide0.87.2.pdf
+lib/App/SeismicUnixGui/doc/SeismicUnixGuiTutorial0.87.1.pdf
+lib/App/SeismicUnixGui/doc/SeismicUnixGuiTutorial0.87.2.pdf
 lib/App/SeismicUnixGui/fortran/bin/immodpg1.1
 lib/App/SeismicUnixGui/fortran/bin/stdsleep
 lib/App/SeismicUnixGui/fortran/Makefile
@@ -4984,6 +4996,7 @@ lib/App/SeismicUnixGui/images/minus.xpm
 'lib/App/SeismicUnixGui/images/working images/Screenshot from 2019-08-28 17-45-12.png'
 'lib/App/SeismicUnixGui/images/working images/Untitled.xbm'
 lib/App/SeismicUnixGui/messages/About.pm
+lib/App/SeismicUnixGui/messages/backup_project_selector_messages.pm
 lib/App/SeismicUnixGui/messages/color_listbox_messages.pm
 lib/App/SeismicUnixGui/messages/FileDialog_button_messages.pm
 lib/App/SeismicUnixGui/messages/FileDialog_close_messages.pm
@@ -5092,6 +5105,7 @@ lib/App/SeismicUnixGui/misc/pod_prog_param_setup.pm
 lib/App/SeismicUnixGui/misc/pod_run_flows.pm
 lib/App/SeismicUnixGui/misc/Point.pm
 lib/App/SeismicUnixGui/misc/premmod.pm
+lib/App/SeismicUnixGui/misc/program_name.pm
 lib/App/SeismicUnixGui/misc/project_selector.pm
 lib/App/SeismicUnixGui/misc/Project_Variables.pm
 lib/App/SeismicUnixGui/misc/read_psunix.pm
@@ -5185,6 +5199,7 @@ lib/App/SeismicUnixGui/script/.split_cdp0000059.su
 lib/App/SeismicUnixGui/script/.split_cdp0000060.su
 lib/App/SeismicUnixGui/script/.split_cdp0000061.su
 lib/App/SeismicUnixGui/script/100
+lib/App/SeismicUnixGui/script/BackupProject
 lib/App/SeismicUnixGui/script/c15_file
 lib/App/SeismicUnixGui/script/c35_file
 lib/App/SeismicUnixGui/script/c55_file
@@ -5224,6 +5239,8 @@ lib/App/SeismicUnixGui/script/post_install_fortran_compile.pl
 lib/App/SeismicUnixGui/script/post_install_scripts.sh
 lib/App/SeismicUnixGui/script/post_installation_scripts.sh
 lib/App/SeismicUnixGui/script/Project
+lib/App/SeismicUnixGui/script/RestoreProject
+lib/App/SeismicUnixGui/script/RestoreTutorial
 lib/App/SeismicUnixGui/script/run_post_installation_scripts.sh
 lib/App/SeismicUnixGui/script/SeismicUnixGui
 lib/App/SeismicUnixGui/script/set_env_variables.sh
@@ -5244,6 +5261,7 @@ lib/App/SeismicUnixGui/script/waveform
 lib/App/SeismicUnixGui/script/wiener_of_spiked_voice_coil_signtaure
 lib/App/SeismicUnixGui/script/wiener_spiked_voice_coil_signtaure
 lib/App/SeismicUnixGui/script/xk
+lib/App/SeismicUnixGui/specs/big_streams/BackupProject_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/iBottomMute_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/immodpg_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/iPick_spec.pm
@@ -5254,6 +5272,7 @@ lib/App/SeismicUnixGui/specs/big_streams/iSpectralAnalysis_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/iTopMute_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/iVA_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/Project_spec.pm
+lib/App/SeismicUnixGui/specs/big_streams/RestoreProject_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/Sseg2su_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/Sucat_spec.pm
 lib/App/SeismicUnixGui/specs/big_streams/Sucat_specB.pm
@@ -5857,6 +5876,7 @@ Makefile.PL
 MANIFEST			This list of files
 MANIFEST.bak
 MANIFEST.SKIP
+mars_yard
 myChain.sh
 MYMETA.json
 MYMETA.yml

@@ -1,12 +1,6 @@
-# local pass for V0.87.1
-# All tested july 6. 2024
-# L_SU_path.pm
-# L_SU_global_constants.pm
-# dirs.pm
-# tbd.pl
 a2su.pm
 algebra_by.pm
-# archive
+archive
 array.pm
 big_streams_param.pm
 binding.pm
@@ -23,6 +17,7 @@ count.pm
 cps.pm
 decisions.pm
 developer.pm
+dirs.pm
 error.pm
 file_dialog.pm
 files_LSU.pm
@@ -35,8 +30,11 @@ grey_flow.pm
 gui_history.pm
 help.pm
 iFile.pm
+junk
 label_boxes.pm
+L_SU_global_constants.pm
 L_SU_local_user_constants.pm
+L_SU_path.pm
 L_SU.pm
 manage_dirs_by.pm
 manage_files_by2.pm
@@ -114,6 +112,7 @@ su_select_waveform.pm
 su_spectral_analysis.pm
 su_xtract_waveform.pm
 system.pm
+tbd.pl
 unif2.pm
 use_pkg.pm
 value_boxes.pm

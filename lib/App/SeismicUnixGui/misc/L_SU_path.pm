@@ -132,6 +132,7 @@ $developer_sunix_categories[17] = '';
 $developer_tools_categories[99] = 'big_streams';
 
 =head2 Define paths
+
   for programs with a colon format instead of forward slashed
 
 =cut
@@ -237,6 +238,8 @@ my $specifications_path_w_colon = {
 	  . $developer_sunix_categories[3],
 	_sufrac => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[3],
+	_sufwatrim => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[3],
 	_sufxdecon => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[3],
 	_sugroll => $global_libs_w_colon->{_specs} . '::'
@@ -295,7 +298,7 @@ my $specifications_path_w_colon = {
 	_sucliphead => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[4],
 	_sucountkey => $global_libs_w_colon->{_specs} . '::'
-	  . $developer_sunix_categories[4],
+	  . $developer_sunix_categories[4], 
 	_sudumptrace => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[4],
 	_suedit => $global_libs_w_colon->{_specs} . '::'
@@ -316,6 +319,8 @@ my $specifications_path_w_colon = {
 	  . $developer_sunix_categories[4],
 	_surange => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[4],
+	_suresstat => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[4],	  
 	_susehw => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[4],
 	_sushw => $global_libs_w_colon->{_specs} . '::'
@@ -350,9 +355,9 @@ my $specifications_path_w_colon = {
 	  . $developer_sunix_categories[6],
 	_sukdmig2d => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[6],
-	_suktmig2d => $global_libs_w_colon->{_specs} . '::'
-	  . $developer_sunix_categories[6],
 	_sukdmig3d => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[6],
+	_suktmig2d => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[6],
 	_sumigfd => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[6],
@@ -369,6 +374,8 @@ my $specifications_path_w_colon = {
 	_sumigprepspi => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[6],
 	_sumigpresp => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[6],
+	_sumigps => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[6],
 	_sumigpspi => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[6],
@@ -566,6 +573,8 @@ my $specifications_path_w_colon = {
 	  . $developer_sunix_categories[9],
 	_unisam => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[9],
+	_unisam2 => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[9],
 	_vel2stiff => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[9],
 
@@ -637,12 +646,16 @@ my $specifications_path_w_colon = {
 	  . $developer_sunix_categories[2],
 	_suxwigb => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[2],
+	_xcontour => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[2],	  
 	_xgraph => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[2],
 	_ximage => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[2],
 	_xmovie => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[2],
+	_xpicker => $global_libs_w_colon->{_specs} . '::'
+	  . $developer_sunix_categories[2],	  
 	_xwigb => $global_libs_w_colon->{_specs} . '::'
 	  . $developer_sunix_categories[2],
 
@@ -861,6 +874,8 @@ my $specifications_path_w_slash = {
 	  . $developer_sunix_categories[3],
 	_sufrac => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[3],
+	_sufwatrim => $global_libs_w_slash->{_specs} . '/'
+	  . $developer_sunix_categories[3],	  
 	_sufxdecon => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[3],
 	_sugroll => $global_libs_w_slash->{_specs} . '/'
@@ -919,7 +934,7 @@ my $specifications_path_w_slash = {
 	_sucliphead => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[4],
 	_sucountkey => $global_libs_w_slash->{_specs} . '/'
-	  . $developer_sunix_categories[4],
+	  . $developer_sunix_categories[4],  
 	_sudumptrace => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[4],
 	_suedit => $global_libs_w_slash->{_specs} . '/'
@@ -940,6 +955,8 @@ my $specifications_path_w_slash = {
 	  . $developer_sunix_categories[4],
 	_surange => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[4],
+	_suresstat => $global_libs_w_slash->{_specs} . '/'
+	  . $developer_sunix_categories[4],	  
 	_susehw => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[4],
 	_sushw => $global_libs_w_slash->{_specs} . '/'
@@ -994,6 +1011,8 @@ my $specifications_path_w_slash = {
 	  . $developer_sunix_categories[6],
 	_sumigpresp => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[6],
+	_sumigps => $global_libs_w_slash->{_specs} . '/'
+	  . $developer_sunix_categories[6],	  
 	_sumigpspi => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[6],
 	_sumigpsti => $global_libs_w_slash->{_specs} . '/'
@@ -1190,6 +1209,8 @@ my $specifications_path_w_slash = {
 	  . $developer_sunix_categories[9],
 	_unisam => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[9],
+	_unisam2 => $global_libs_w_slash->{_specs} . '/'
+	  . $developer_sunix_categories[9],	  
 	_vel2stiff => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[9],
 
@@ -1261,12 +1282,16 @@ my $specifications_path_w_slash = {
 	  . $developer_sunix_categories[2],
 	_suxwigb => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[2],
+	_xcontour => $global_libs_w_slash->{_specs} . '/'
+	  . $developer_sunix_categories[2],	  
 	_xgraph => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[2],
 	_ximage => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[2],
 	_xmovie => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[2],
+	_xpicker => $global_libs_w_slash->{_specs} . '/'
+	  . $developer_sunix_categories[2],	  
 	_xwigb => $global_libs_w_slash->{_specs} . '/'
 	  . $developer_sunix_categories[2],
 

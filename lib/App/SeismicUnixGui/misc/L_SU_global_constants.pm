@@ -590,6 +590,7 @@ sub get_developer_sunix_category_h {
 		_sueipofi     => $developer_sunix_categories[3],
 		_sufilter     => $developer_sunix_categories[3],
 		_sufrac       => $developer_sunix_categories[3],
+		_sufwatrim    => $developer_sunix_categories[3],
 		_sufxdecon    => $developer_sunix_categories[3],
 		_sugroll      => $developer_sunix_categories[3],
 		_suk1k2filter => $developer_sunix_categories[3],
@@ -630,6 +631,7 @@ sub get_developer_sunix_category_h {
 		_supaste      => $developer_sunix_categories[4],
 		_surandhw     => $developer_sunix_categories[4],
 		_surange      => $developer_sunix_categories[4],
+		_suresstat    => $developer_sunix_categories[4],		
 		_susehw       => $developer_sunix_categories[4],
 		_sushw        => $developer_sunix_categories[4],
 		_sustatic     => $developer_sunix_categories[4],
@@ -658,6 +660,7 @@ sub get_developer_sunix_category_h {
 		_sumigpreffd  => $developer_sunix_categories[6],
 		_sumigprepspi => $developer_sunix_categories[6],
 		_sumigpresp   => $developer_sunix_categories[6],
+		_sumigps      => $developer_sunix_categories[6],
 		_sumigpspi    => $developer_sunix_categories[6],
 		_sumigpsti    => $developer_sunix_categories[6],
 		_sumigsplit   => $developer_sunix_categories[6],
@@ -758,6 +761,7 @@ sub get_developer_sunix_category_h {
 		_unif2      => $developer_sunix_categories[9],
 		_unif2aniso => $developer_sunix_categories[9],
 		_unisam     => $developer_sunix_categories[9],
+		_unisam2    => $developer_sunix_categories[9],
 		_vel2stiff  => $developer_sunix_categories[9],
 
 		_elaps           => $developer_sunix_categories[2],
@@ -794,9 +798,11 @@ sub get_developer_sunix_category_h {
 		_suxmovie        => $developer_sunix_categories[2],
 		_suxpicker       => $developer_sunix_categories[2],
 		_suxwigb         => $developer_sunix_categories[2],
+		_xcontour        => $developer_sunix_categories[2],		
 		_xgraph          => $developer_sunix_categories[2],
 		_ximage          => $developer_sunix_categories[2],
 		_xmovie          => $developer_sunix_categories[2],
+		_xpicker         => $developer_sunix_categories[2],		
 		_xwigb           => $developer_sunix_categories[2],
 
 		_suflip  => $developer_sunix_categories[11],
@@ -873,33 +879,36 @@ my @sunix_datum_programs =
   ( "sudatumk2dr", "sudatumk2ds", "sukdmdcr", "sukdmdcs", );
 
 my @sunix_filter_programs = (
-	"subfilt",  "succfilt",     "sucddecon",  "sudipfilt",
-	"sueipofi", "sufilter",     "sufrac",     "sufxdecon",
-	"sugroll",  "suk1k2filter", "sukfilter",  "sulfaf",
-	"sumedian", "supef",        "suphase",    "suphidecon",
-	"supofilt", "supolar",      "susmgauss2", "sutvband",
+	"subfilt", "succfilt", "sucddecon", "sudipfilt",
+	"sueipofi", "sufilter", "sufrac", 	"sufwatrim",
+	"sufxdecon",
+	"sugroll", "suk1k2filter", "sukfilter", "sulfaf",
+	"sumedian", "supef", "suphase", "suphidecon",
+	"supofilt", "supolar", "susmgauss2", "sutvband",
 );
 
 my @sunix_header_programs = (
-	"segyclean",   "segyhdrmod", "segyhdrs",    "setbhed",
-	"su3dchart",   "suabshw",    "suaddhead",   "suaddstatics",
-	"suahw",       "suascii",    "suazimuth",   "sucdpbin",
-	"suchart",     "suchw",      "sucliphead",  "sucountkey",
-	"sudumptrace", "suedit",     "sugethw",     "suhtmath",
-	"sukeycount",  "sulcthw",    "sulhead",     "supaste",
-	"surandhw",    "surange",    "susehw",      "sushw",
-	"sustatic",    "sustaticB",  "sustaticrrs", "sustrip",
-	"sutrcount",   "suutm",      "suxedit",     "swapbhed",
+	"segyclean", "segyhdrmod", "segyhdrs", "setbhed",
+	"su3dchart", "suabshw", "suaddhead", "suaddstatics",
+	"suahw", "suascii", "suazimuth", "sucdpbin",
+	"suchart", "suchw", "sucliphead", "sucountkey",
+	"sudumptrace", "suedit", "sugethw", "suhtmath",
+	"sukeycount", "sulcthw", "sulhead", "supaste",
+	"surandhw", "surange", "suresstat", "susehw",
+	"sushw",
+	"sustatic", "sustaticB", "sustaticrrs", "sustrip",
+	"sutrcount", "suutm", "suxedit", "swapbhed",
 );
 
 my @sunix_inversion_programs = ( "suinvco3d", "suinvvxzco", "suinvzco3d", );
 
 my @sunix_migration_programs = (
-	"sudatumfd",   "sugazmig",    "sukdmig2d",   "suktmig2d",
-	"sukdmig3d",   "sumigfd",     "sumigffd",    "sumiggbzo",
-	"sumiggbzoan", "sumigprefd",  "sumigpreffd", "sumigprepspi",
-	"sumigpresp",  "sumigpspi",   "sumigpsti",   "sumigsplit",
-	"sumigtk",     "sumigtopo2d", "sustolt",     "sutifowler",
+	"sudatumfd", "sugazmig", "sukdmig2d", "suktmig2d",
+	"sukdmig3d", "sumigfd", "sumigffd", "sumiggbzo",
+	"sumiggbzoan", "sumigprefd", "sumigpreffd", "sumigprepspi",
+	"sumigpresp", "sumigps", "sumigpspi", "sumigpsti",
+	"sumigsplit",
+	"sumigtk", "sumigtopo2d", "sustolt", "sutifowler",
 );
 
 my @sunix_shell_programs = ( "cat_su", "evince", "sugetgthr", "suputgthr", );
@@ -934,10 +943,11 @@ my @sunix_NMO_Vel_Stk_programs = (
 );
 
 my @sunix_par_programs = (
-	"a2b",        "a2i",       "b2a",      "bhedtopar",
-	"cshotplot",  "float2ibm", "ftnstrip", "ftnunstrip",
-	"makevel",    "mkparfile", "transp",   "unif2",
-	"unif2aniso", "unisam",    "vel2stiff",
+	"a2b", "a2i", "b2a", "bhedtopar",
+	"cshotplot", "float2ibm", "ftnstrip", "ftnunstrip",
+	"makevel", "mkparfile", "transp", "unif2",
+	"unif2aniso", "unisam", "unisam2","vel2stiff",
+
 );
 
 my @sunix_picks_programs = (
@@ -945,16 +955,16 @@ my @sunix_picks_programs = (
 );
 
 my @sunix_plot_programs = (
-	"elaps",           "lcmap",     "lprop",         "psbbox",
-	"pscontour",       "pscube",    "pscubecontour", "psepsi",
-	"psgraph",         "psimage",   "pslabel",       "psmanager",
-	"psmerge",         "psmovie",   "pswigb",        "pswigp",
-	"scmap",           "spsplot",   "supscontour",   "supscube",
-	"supscubecontour", "supsgraph", "supsimage",     "supsmax",
-	"supsmovie",       "supswigb",  "supswigp",      "suxcontour",
-	"suxgraph",        "suximage",  "suxmax",        "suxmovie",
-	"suxpicker",       "suxwigb",   "xgraph",        "ximage",
-	"xmovie",          "xwigb",
+    "elaps", "lcmap", "lprop", "psbbox",
+	"pscontour", "pscube", "pscubecontour", "psepsi",
+	"psgraph", "psimage", "pslabel", "psmanager",
+	"psmerge", "psmovie", "pswigb", "pswigp",
+	"scmap", "spsplot", "supscontour", "supscube",
+	"supscubecontour", "supsgraph", "supsimage", "supsmax",
+	"supsmovie", "supswigb", "supswigp", "suxcontour",
+	"suxgraph", "suximage", "suxmax", "suxmovie",
+	"suxpicker", "suxwigb", "xcontour","xgraph", 
+	"ximage", "xmovie", "xpicker", "xwigb",
 );
 
 my @sunix_shapeNcut_programs = (
